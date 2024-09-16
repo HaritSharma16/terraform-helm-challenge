@@ -1,0 +1,5 @@
+apiVersion: v2
+name: aws-load-balancer-controller
+description: A Helm chart for AWS Load Balancer Controller
+version: 0.1.0
+

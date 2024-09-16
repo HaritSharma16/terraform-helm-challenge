@@ -1,0 +1,15 @@
+apiVersion: grafana.influxdata.com/v1alpha1
+kind: Dashboard
+metadata:
+  name: nextjs-website-dashboard
+spec:
+  dashboard:
+    apiVersion: 1
+    title: Next.js Website Dashboard
+    panels:
+      - type: graph
+        title: HTTP Requests
+        targets:
+          - expr: sum(rate(http_requests_total[5m])) by (method)
+            legendFormat: "{{method}}"
+    refresh: 10s

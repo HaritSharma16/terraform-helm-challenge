@@ -1,0 +1,25 @@
+replicaCount: 3
+
+image:
+  repository: bitnami/postgresql
+  tag: latest
+
+service:
+  name: postgresql
+  type: ClusterIP
+  port: 5432
+
+persistence:
+  enabled: true
+  size: 100Gi
+  storageClass: "ebs"
+
+postgresql:
+  username: user
+  password: password
+  database: mydatabase
+
+backup:
+  enabled: true
+  s3Bucket: "s3-bucket-name"
+  schedule: "0 2 * * *"

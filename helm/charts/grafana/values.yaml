@@ -1,0 +1,24 @@
+image:
+  repository: grafana/grafana
+  tag: latest
+
+service:
+  type: LoadBalancer
+  port: 80
+
+admin:
+  password: "admin"
+
+dashboards:
+  default:
+    example:
+      json: |
+        {
+          "panels": [
+            {
+              "type": "graph",
+              "title": "Example Dashboard",
+              "datasource": "Prometheus"
+            }
+          ]
+        }

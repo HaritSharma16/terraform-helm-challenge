@@ -1,0 +1,16 @@
+apiVersion: v2
+name: react-dashboard
+description: A Helm chart for React.js Dashboard application
+version: 0.1.0
+appVersion: "1.0.0"
+icon: https://mydomain.com/icon.png
+maintainers:
+  - name: Your Name
+    email: your.email@domain.com
+keywords:
+  - react
+  - dashboard
+  - helm
+sources:
+  - https://github.com/myorg/react-dashboard
+dependencies: []

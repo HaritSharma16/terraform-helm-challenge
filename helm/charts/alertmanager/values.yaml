@@ -1,0 +1,16 @@
+image:
+  repository: prom/alertmanager
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 9093
+
+config:
+  global:
+    slack_api_url: "https://slack.com/api/chat.postMessage"
+    smtp_smarthost: "smtp.example.com:587"
+    smtp_from: "alerts@example.com"
+    smtp_auth_username: "user"
+    smtp_auth_password: "password"
+

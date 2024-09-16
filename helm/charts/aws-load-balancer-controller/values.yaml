@@ -1,0 +1,18 @@
+replicaCount: 1
+
+image:
+  repository: amazon/aws-alb-ingress-controller
+  tag: latest
+
+serviceAccount:
+  create: true
+  name: aws-load-balancer-controller
+
+service:
+  name: aws-load-balancer-controller
+  type: ClusterIP
+  port: 80
+
+ingress:
+  className: "alb"
+

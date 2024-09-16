@@ -1,0 +1,10 @@
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: nextjs-website-psp
+spec:
+  privileged: {{ .Values.psp.privileged }}
+  allowedCapabilities:
+    {{- range .Values.psp.allowedCapabilities }}
+    - {{ . }}
+    {{- end }}

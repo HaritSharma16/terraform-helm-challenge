@@ -1,0 +1,9 @@
+replicas: 3
+image:
+  repository: my-repo/nextjs-api
+  tag: latest
+environment: production
+
+ingress:
+  enabled: true
+  host: nextjs-api.mydomain.com

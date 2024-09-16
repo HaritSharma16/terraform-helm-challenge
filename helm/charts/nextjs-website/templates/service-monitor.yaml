@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: nextjs-website-service-monitor
+  labels:
+    app: nextjs-website
+spec:
+  selector:
+    matchLabels:
+      app: nextjs-website
+  endpoints:
+    - port: http
+      interval: 30s

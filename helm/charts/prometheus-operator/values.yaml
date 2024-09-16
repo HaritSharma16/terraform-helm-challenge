@@ -1,0 +1,10 @@
+prometheus:
+  enabled: true
+  serviceMonitor:
+    enabled: true
+
+alertmanager:
+  enabled: true
+
+grafana:
+  enabled: true

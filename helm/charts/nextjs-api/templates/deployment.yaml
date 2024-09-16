@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nextjs-api
+  labels:
+    app: nextjs-api
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: nextjs-api
+  template:
+    metadata:
+      labels:
+        app: nextjs-api
+    spec:
+      containers:
+        - name: nextjs-api
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: 3001
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "500m"
+            limits:
+              memory: "1024Mi"
+              cpu: "1"
+          env:
+            - name: NODE_ENV
+              value: "{{ .Values.environment }}"

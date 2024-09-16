@@ -1,0 +1,9 @@
+replicas: 3
+image:
+  repository: my-repo/react-dashboard
+  tag: latest
+environment: production
+
+ingress:
+  enabled: true
+  host: react-dashboard.mydomain.com

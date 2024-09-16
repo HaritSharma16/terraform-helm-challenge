@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: nextjs-website-network-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: nextjs-website
+  ingress:
+    {{- range .Values.networkPolicy.ingress }}
+    - from:
+        {{- range .from }}
+        - podSelector:
+            matchLabels:
+              app: {{ .matchLabels.app }}
+        {{- end }}
+    {{- end }}
